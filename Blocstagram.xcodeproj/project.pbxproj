@@ -537,6 +537,7 @@
 				646CE3371C4754BC00AB4479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		646CE3381C4754BC00AB4479 /* Build configuration list for PBXNativeTarget "BlocstagramTests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +546,7 @@
 				646CE33A1C4754BC00AB4479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		646CE33B1C4754BC00AB4479 /* Build configuration list for PBXNativeTarget "BlocstagramUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +555,7 @@
 				646CE33D1C4754BC00AB4479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
