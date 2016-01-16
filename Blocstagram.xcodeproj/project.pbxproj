@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640E6AA81C48980600BA03EA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E6AA71C48980600BA03EA /* User.m */; };
+		640E6AAB1C48997400BA03EA /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E6AAA1C48997400BA03EA /* Media.m */; };
+		640E6AAE1C48A8CB00BA03EA /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E6AAD1C48A8CB00BA03EA /* Comment.m */; };
+		640E6AB11C48AA4600BA03EA /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E6AB01C48AA4600BA03EA /* DataSource.m */; };
 		646CE30D1C4754BC00AB4479 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 646CE30C1C4754BC00AB4479 /* main.m */; };
 		646CE3101C4754BC00AB4479 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 646CE30F1C4754BC00AB4479 /* AppDelegate.m */; };
 		646CE3181C4754BC00AB4479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646CE3171C4754BC00AB4479 /* Assets.xcassets */; };
@@ -44,6 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		640E6AA61C48980600BA03EA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		640E6AA71C48980600BA03EA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		640E6AA91C48997400BA03EA /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
+		640E6AAA1C48997400BA03EA /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		640E6AAC1C48A8CB00BA03EA /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		640E6AAD1C48A8CB00BA03EA /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		640E6AAF1C48AA4600BA03EA /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		640E6AB01C48AA4600BA03EA /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		646CE3081C4754BC00AB4479 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		646CE30C1C4754BC00AB4479 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		646CE30E1C4754BC00AB4479 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +140,14 @@
 				646CE3191C4754BC00AB4479 /* LaunchScreen.storyboard */,
 				646CE31C1C4754BC00AB4479 /* Info.plist */,
 				646CE30B1C4754BC00AB4479 /* Supporting Files */,
+				640E6AA61C48980600BA03EA /* User.h */,
+				640E6AA71C48980600BA03EA /* User.m */,
+				640E6AA91C48997400BA03EA /* Media.h */,
+				640E6AAA1C48997400BA03EA /* Media.m */,
+				640E6AAC1C48A8CB00BA03EA /* Comment.h */,
+				640E6AAD1C48A8CB00BA03EA /* Comment.m */,
+				640E6AAF1C48AA4600BA03EA /* DataSource.h */,
+				640E6AB01C48AA4600BA03EA /* DataSource.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -317,7 +337,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640E6AA81C48980600BA03EA /* User.m in Sources */,
+				640E6AAE1C48A8CB00BA03EA /* Comment.m in Sources */,
+				640E6AAB1C48997400BA03EA /* Media.m in Sources */,
 				646CE3101C4754BC00AB4479 /* AppDelegate.m in Sources */,
+				640E6AB11C48AA4600BA03EA /* DataSource.m in Sources */,
 				646CE30D1C4754BC00AB4479 /* main.m in Sources */,
 				646CE3561C47562200AB4479 /* ImagesTableViewController.m in Sources */,
 			);
@@ -537,6 +561,7 @@
 				646CE3371C4754BC00AB4479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		646CE3381C4754BC00AB4479 /* Build configuration list for PBXNativeTarget "BlocstagramTests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +570,7 @@
 				646CE33A1C4754BC00AB4479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		646CE33B1C4754BC00AB4479 /* Build configuration list for PBXNativeTarget "BlocstagramUITests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +579,7 @@
 				646CE33D1C4754BC00AB4479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
