@@ -28,6 +28,7 @@
 		646CE3521C4755A300AB4479 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 646CE3481C4755A300AB4479 /* 9.jpg */; };
 		646CE3531C4755A300AB4479 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 646CE3491C4755A300AB4479 /* 10.jpg */; };
 		646CE3561C47562200AB4479 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 646CE3551C47562200AB4479 /* ImagesTableViewController.m */; };
+		64709D0A1C4F3D100031179D /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64709D091C4F3D100031179D /* MediaTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		646CE3491C4755A300AB4479 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		646CE3541C47562200AB4479 /* ImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesTableViewController.h; sourceTree = "<group>"; };
 		646CE3551C47562200AB4479 /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
+		64709D081C4F3D100031179D /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
+		64709D091C4F3D100031179D /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				640E6AAD1C48A8CB00BA03EA /* Comment.m */,
 				640E6AAF1C48AA4600BA03EA /* DataSource.h */,
 				640E6AB01C48AA4600BA03EA /* DataSource.m */,
+				64709D081C4F3D100031179D /* MediaTableViewCell.h */,
+				64709D091C4F3D100031179D /* MediaTableViewCell.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			files = (
 				640E6AA81C48980600BA03EA /* User.m in Sources */,
 				640E6AAE1C48A8CB00BA03EA /* Comment.m in Sources */,
+				64709D0A1C4F3D100031179D /* MediaTableViewCell.m in Sources */,
 				640E6AAB1C48997400BA03EA /* Media.m in Sources */,
 				646CE3101C4754BC00AB4479 /* AppDelegate.m in Sources */,
 				640E6AB11C48AA4600BA03EA /* DataSource.m in Sources */,
@@ -477,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Blocstagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericjbeasley.Blocstagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +495,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Blocstagram/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericjbeasley.Blocstagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -522,6 +530,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = BlocstagramUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericjbeasley.BlocstagramUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -534,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = BlocstagramUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ericjbeasley.BlocstagramUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
