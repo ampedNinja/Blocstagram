@@ -111,6 +111,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		645B0EC81C4F4C800015BD53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64709D081C4F3D100031179D /* MediaTableViewCell.h */,
+				64709D091C4F3D100031179D /* MediaTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		645B0EC91C4F4C9C0015BD53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				640E6AA61C48980600BA03EA /* User.h */,
+				640E6AA71C48980600BA03EA /* User.m */,
+				640E6AA91C48997400BA03EA /* Media.h */,
+				640E6AAA1C48997400BA03EA /* Media.m */,
+				640E6AAC1C48A8CB00BA03EA /* Comment.h */,
+				640E6AAD1C48A8CB00BA03EA /* Comment.m */,
+				640E6AAF1C48AA4600BA03EA /* DataSource.h */,
+				640E6AB01C48AA4600BA03EA /* DataSource.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		645B0ECA1C4F4CB10015BD53 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				646CE3551C47562200AB4479 /* ImagesTableViewController.m */,
+				646CE3541C47562200AB4479 /* ImagesTableViewController.h */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		646CE2FF1C4754BC00AB4479 = {
 			isa = PBXGroup;
 			children = (
@@ -137,22 +170,13 @@
 				646CE33F1C47557B00AB4479 /* Images */,
 				646CE30E1C4754BC00AB4479 /* AppDelegate.h */,
 				646CE30F1C4754BC00AB4479 /* AppDelegate.m */,
-				646CE3541C47562200AB4479 /* ImagesTableViewController.h */,
-				646CE3551C47562200AB4479 /* ImagesTableViewController.m */,
+				645B0EC91C4F4C9C0015BD53 /* Model */,
+				645B0EC81C4F4C800015BD53 /* View */,
+				645B0ECA1C4F4CB10015BD53 /* Controller */,
 				646CE3171C4754BC00AB4479 /* Assets.xcassets */,
 				646CE3191C4754BC00AB4479 /* LaunchScreen.storyboard */,
 				646CE31C1C4754BC00AB4479 /* Info.plist */,
 				646CE30B1C4754BC00AB4479 /* Supporting Files */,
-				640E6AA61C48980600BA03EA /* User.h */,
-				640E6AA71C48980600BA03EA /* User.m */,
-				640E6AA91C48997400BA03EA /* Media.h */,
-				640E6AAA1C48997400BA03EA /* Media.m */,
-				640E6AAC1C48A8CB00BA03EA /* Comment.h */,
-				640E6AAD1C48A8CB00BA03EA /* Comment.m */,
-				640E6AAF1C48AA4600BA03EA /* DataSource.h */,
-				640E6AB01C48AA4600BA03EA /* DataSource.m */,
-				64709D081C4F3D100031179D /* MediaTableViewCell.h */,
-				64709D091C4F3D100031179D /* MediaTableViewCell.m */,
 			);
 			path = Blocstagram;
 			sourceTree = "<group>";
