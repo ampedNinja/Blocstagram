@@ -138,8 +138,8 @@
 		645B0ECA1C4F4CB10015BD53 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				646CE3551C47562200AB4479 /* ImagesTableViewController.m */,
 				646CE3541C47562200AB4479 /* ImagesTableViewController.h */,
+				646CE3551C47562200AB4479 /* ImagesTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
