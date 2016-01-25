@@ -86,6 +86,9 @@ static NSParagraphStyle *paragraphStyle;
     [mutableUsernameAndCaptionString addAttribute:NSFontAttributeName value:[boldFont fontWithSize:usernameFontSize] range:usernameRange];
     [mutableUsernameAndCaptionString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
     
+    NSRange captionRange = [baseString rangeOfString:self.mediaItem.caption];
+    [mutableUsernameAndCaptionString addAttribute:NSKernAttributeName value:[NSNumber numberWithInt:5] range: captionRange];
+    
     return mutableUsernameAndCaptionString;
 }
 
@@ -102,6 +105,17 @@ static NSParagraphStyle *paragraphStyle;
         NSRange usernameRange = [baseString rangeOfString:comment.from.userName];
         [oneCommentString addAttribute:NSFontAttributeName value:boldFont range:usernameRange];
         [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+        
+        
+        
+        if ([self.mediaItem.comments indexOfObject:comment] % 2 == 0) {
+            NSRange commentRange = [baseString rangeOfString:comment.text];
+            //Inset code to align text to the right here
+            
+            if (comment == self.mediaItem.comments[0]) {
+                [oneCommentString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:commentRange];
+            }
+        }
         
         [commentString appendAttributedString:oneCommentString];
     }
