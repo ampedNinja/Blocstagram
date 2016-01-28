@@ -88,7 +88,7 @@ static NSParagraphStyle *paragraphStyle;
                                                                   attribute:NSLayoutAttributeNotAnAttribute
                                                                  multiplier:1
                                                                    constant:100];
-        self.imageHeightConstraint.identifier = @"Username and caption label height constraint";
+        self.usernameAndCaptionLabelHeightConstraint.identifier = @"Username and caption label height constraint";
         
         self.commentLabelHeightConstraint = [NSLayoutConstraint constraintWithItem:_commentLabel
                                                                   attribute:NSLayoutAttributeHeight
@@ -166,9 +166,16 @@ static NSParagraphStyle *paragraphStyle;
         CGSize usernameLabelSize = [self.usernameAndCaptionLabel sizeThatFits:maxSize];
         CGSize commentLabelSize = [self.commentLabel sizeThatFits:maxSize];
         
-        self.usernameAndCaptionLabelHeightConstraint.constant = usernameLabelSize.height + 20;
-        self.commentLabelHeightConstraint.constant = commentLabelSize.height + 20;
-        self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+        self.usernameAndCaptionLabelHeightConstraint.constant = usernameLabelSize.height == 0 ? 0 : usernameLabelSize.height + 20;
+        self.commentLabelHeightConstraint.constant = commentLabelSize.height == 0 ? 0 : commentLabelSize.height + 20;
+        
+        
+        
+        if (self.mediaItem.image.size.width > 0 && CGRectGetWidth(self.contentView.bounds) > 0) {
+            self.imageHeightConstraint.constant = self.mediaItem.image.size.height / self.mediaItem.image.size.width * CGRectGetWidth(self.contentView.bounds);
+        } else {
+            self.imageHeightConstraint.constant = 0;
+        }
         
         // Hide the line between cells
         self.separatorInset = UIEdgeInsetsMake(0, CGRectGetWidth(self.bounds)/2.0, 0, CGRectGetWidth(self.bounds)/2.0);
