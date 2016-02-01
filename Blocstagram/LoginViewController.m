@@ -13,6 +13,7 @@
 
 @property (nonatomic, weak) UIWebView *webView;
 
+
 @end
 
 @implementation LoginViewController
@@ -25,9 +26,14 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     
     UIWebView *webView = [[UIWebView alloc] init];
     webView.delegate = self;
-    
+
+
     [self.view addSubview:webView];
     self.webView = webView;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:self.webView
+                                                                            action:@selector(goBack)];
     
     self.title = NSLocalizedString(@"Login", @"Login");
     
@@ -38,6 +44,8 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
         [self.webView loadRequest:request];
     }
+    
+    
 }
 
 - (void)dealloc {
@@ -81,6 +89,7 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     
     return YES;
 }
+
 
 /*
 #pragma mark - Navigation
