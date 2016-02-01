@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07ACD1CB1C5DE571001D4355 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ACD1CA1C5DE571001D4355 /* LoginViewController.m */; };
 		640E6AA81C48980600BA03EA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E6AA71C48980600BA03EA /* User.m */; };
 		640E6AAB1C48997400BA03EA /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E6AAA1C48997400BA03EA /* Media.m */; };
 		640E6AAE1C48A8CB00BA03EA /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 640E6AAD1C48A8CB00BA03EA /* Comment.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07ACD1C91C5DE571001D4355 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		07ACD1CA1C5DE571001D4355 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		640E6AA61C48980600BA03EA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		640E6AA71C48980600BA03EA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		640E6AA91C48997400BA03EA /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 			children = (
 				64709D081C4F3D100031179D /* MediaTableViewCell.h */,
 				64709D091C4F3D100031179D /* MediaTableViewCell.m */,
+				07ACD1C91C5DE571001D4355 /* LoginViewController.h */,
+				07ACD1CA1C5DE571001D4355 /* LoginViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				64709D0A1C4F3D100031179D /* MediaTableViewCell.m in Sources */,
 				640E6AAB1C48997400BA03EA /* Media.m in Sources */,
 				646CE3101C4754BC00AB4479 /* AppDelegate.m in Sources */,
+				07ACD1CB1C5DE571001D4355 /* LoginViewController.m in Sources */,
 				640E6AB11C48AA4600BA03EA /* DataSource.m in Sources */,
 				646CE30D1C4754BC00AB4479 /* main.m in Sources */,
 				646CE3561C47562200AB4479 /* ImagesTableViewController.m in Sources */,
