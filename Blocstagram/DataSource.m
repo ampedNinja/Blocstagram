@@ -61,13 +61,15 @@
                         [self willChangeValueForKey:@"mediaItems"];
                         self.mediaItems = mutableMediaItems;
                         [self didChangeValueForKey:@"mediaItems"];
-                        
+                        //A-35 solution
+                        [[DataSource sharedInstance] requestNewItemsWithCompletionHandler:nil];
                         for (Media *mediaItem in self.mediaItems) {
                             [self downloadImageForMediaItem:mediaItem];
                         }
                     } else {
                         [self populateDataWithParameters:nil completionHandler:nil];
                     }
+                    
                 });
             });
         }
