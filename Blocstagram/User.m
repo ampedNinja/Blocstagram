@@ -50,7 +50,7 @@
     [aCoder encodeObject:self.userName forKey:NSStringFromSelector(@selector(userName))];
     [aCoder encodeObject:self.fullName forKey:NSStringFromSelector(@selector(fullName))];
     [aCoder encodeObject:self.profilePicture forKey:NSStringFromSelector(@selector(profilePicture))];
-    [aCoder encodeObject:self.profilePictureURL forKey:NSStringFromSelector(@selector(profilePicture))];
+    [aCoder encodeObject:self.profilePictureURL forKey:NSStringFromSelector(@selector(profilePictureURL))];
 }
 
 
