@@ -7,9 +7,8 @@
 //
 
 #import "MediaFullScreenViewController.h"
-
-#import "MediaFullScreenViewController.h"
 #import "Media.h"
+#import "MediaTableViewCell.h"
 
 @interface MediaFullScreenViewController () <UIScrollViewDelegate>
 
@@ -56,6 +55,16 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+    
+    //A36 Add share button
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [shareButton addTarget:self
+                    action:@selector(cell:didLongPressImageView:)
+          forControlEvents:UIControlEventTouchUpInside];
+    [shareButton setTitle:@"Share" forState:UIControlStateNormal];
+    shareButton.frame = CGRectMake(self.view.frame.size.width - 80.0, 30.0, 60.0, 25.0);
+    shareButton.backgroundColor = [UIColor colorWithRed:50.0 green:50.0 blue:50.0 alpha:0.75];
+    [self.view addSubview:shareButton];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,10 +74,10 @@
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    // #4
+
     self.scrollView.frame = self.view.bounds;
     
-    // #5
+
     CGSize scrollViewFrameSize = self.scrollView.frame.size;
     CGSize scrollViewContentSize = self.scrollView.contentSize;
     
@@ -78,6 +87,8 @@
     
     self.scrollView.minimumZoomScale = minScale;
     self.scrollView.maximumZoomScale = 1;
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
