@@ -7,8 +7,8 @@
 //
 
 #import "MediaFullScreenViewController.h"
-#import "Media.h"
 #import "MediaTableViewCell.h"
+#import "Media.h"
 
 @interface MediaFullScreenViewController () <UIScrollViewDelegate>
 
@@ -46,9 +46,11 @@
     
     self.scrollView.contentSize = self.media.image.size;
     
-    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
+    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                       action:@selector(tapFired:)];
     
-    self.doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapFired:)];
+    self.doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                             action:@selector(doubleTapFired:)];
     self.doubleTap.numberOfTapsRequired = 2;
     
     [self.tap requireGestureRecognizerToFail:self.doubleTap];
@@ -56,15 +58,21 @@
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
     
-    //A36 Add share button
-    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [shareButton addTarget:self
-                    action:@selector(cell:didLongPressImageView:)
-          forControlEvents:UIControlEventTouchUpInside];
+    //A36: add share button
+    CGRect shareButtonFrame = CGRectMake(self.view.frame.size.width - 90,
+                                         20,
+                                         80,
+                                         30);
+    UIButton *shareButton = [[UIButton alloc] initWithFrame:shareButtonFrame];
     [shareButton setTitle:@"Share" forState:UIControlStateNormal];
-    shareButton.frame = CGRectMake(self.view.frame.size.width - 80.0, 30.0, 60.0, 25.0);
-    shareButton.backgroundColor = [UIColor colorWithRed:50.0 green:50.0 blue:50.0 alpha:0.75];
+    [shareButton setBackgroundColor:[UIColor colorWithRed:0.0
+                                                    green:0.0
+                                                     blue:0.0
+                                                    alpha:0.25]];
+
+    [shareButton addTarget:self action:@selector(shareButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:shareButton];
+    //A36: end
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,7 +85,6 @@
 
     self.scrollView.frame = self.view.bounds;
     
-
     CGSize scrollViewFrameSize = self.scrollView.frame.size;
     CGSize scrollViewContentSize = self.scrollView.contentSize;
     
@@ -87,8 +94,6 @@
     
     self.scrollView.minimumZoomScale = minScale;
     self.scrollView.maximumZoomScale = 1;
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -150,6 +155,27 @@
         [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
     }
 }
+
+//A36: Add share button selector
+- (IBAction)shareButtonPressed:(id)sender {
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    
+    if (self.media.caption.length > 0) {
+        [itemsToShare addObject:self.media.caption];
+    }
+    
+    if (self.media.image) {
+        [itemsToShare addObject:self.media.image];
+    }
+    
+    if (itemsToShare.count > 0) {
+        UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+        [self presentViewController:activityVC animated:YES completion:nil];
+    }
+    
+
+}
+//A36: end
 
 /*
 #pragma mark - Navigation
