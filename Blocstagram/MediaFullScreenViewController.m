@@ -158,15 +158,7 @@
 
 //A36: Add share button selector
 - (IBAction)shareButtonPressed:(id)sender {
-    NSMutableArray *itemsToShare = [NSMutableArray array];
-    
-    if (self.media.caption.length > 0) {
-        [itemsToShare addObject:self.media.caption];
-    }
-    
-    if (self.media.image) {
-        [itemsToShare addObject:self.media.image];
-    }
+    NSArray *itemsToShare = [self.media bundleForShare];
     
     if (itemsToShare.count > 0) {
         UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
