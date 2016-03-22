@@ -141,6 +141,11 @@
     return @"abfabdd539524474a6334dea16b5bf09";
 }
 
+- (void)redownloadItem {
+    
+
+}
+
 - (void)populateDataWithParameters:(NSDictionary *)parameters completionHandler:(NewItemCompletionBlock)completionHandler {
     if (self.accessToken) {
         // Only get gata if there's an access token
@@ -148,7 +153,7 @@
         
         [mutableParameters addEntriesFromDictionary:parameters];
         
-        [self.instagramOperationManager GET:@"users/self/feed"
+        [self.instagramOperationManager GET:@"users/self/media/recent"
                                  parameters:mutableParameters
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                         if ([responseObject isKindOfClass:[NSDictionary class]]) {
@@ -232,6 +237,7 @@
 
 
 - (void)downloadImageForMediaItem:(Media *)mediaItem {
+    NSLog(@"get item reached");
     if (mediaItem.mediaURL && !mediaItem.image) {
         [self.instagramOperationManager GET:mediaItem.mediaURL.absoluteString
                                  parameters:nil
