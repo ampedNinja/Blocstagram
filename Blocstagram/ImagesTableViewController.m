@@ -171,6 +171,10 @@
     }
 }
 
+- (void)cell:(MediaTableViewCell*)cell didTwoTapImageView:(UIImageView *)imageView {
+    [[DataSource sharedInstance] downloadImageForMediaItem:cell.mediaItem];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
