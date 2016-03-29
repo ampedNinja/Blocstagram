@@ -134,7 +134,7 @@
 }
 
 + (NSString *)instagramClientID {
-    return @"abfabdd539524474a6334dea16b5bf09";
+    return @"da2749d1661b474d863e0cc7b6b0e7dc";
 }
 
 - (void)populateDataWithParameters:(NSDictionary *)parameters completionHandler:(NewItemCompletionBlock)completionHandler {
@@ -144,6 +144,9 @@
         
         [mutableParameters addEntriesFromDictionary:parameters];
         
+        //disable image downloads
+        //[self.instagramOperationManager GET:@"users/self/feed"
+         //enable image downloads
         [self.instagramOperationManager GET:@"users/self/media/recent"
                                  parameters:mutableParameters
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {

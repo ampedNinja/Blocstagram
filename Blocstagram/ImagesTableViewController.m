@@ -22,11 +22,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style {
    self = [super initWithStyle:style];
-   if (self) {
-       
-   }
-   
-   return self;
+    return self;
 }
 
 - (void)dealloc {
@@ -43,7 +39,6 @@
    
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -64,10 +59,25 @@
     }
 }
 
+- (void)getMediaForVisibleCells {
+    NSArray *visibleRows = [self.tableView indexPathsForVisibleRows];
+    for (NSIndexPath *visible in visibleRows) {
+        Media *mediaItem = [DataSource sharedInstance].mediaItems[visible.row];
+        if (mediaItem.downloadState == MediaDownloadStateNeedsImage) {
+            [[DataSource sharedInstance] downloadImageForMediaItem:mediaItem];
+        }
+    }
+
+}
+
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [self infiniteScrollIfNecessary];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self getMediaForVisibleCells];
 }
 
 #pragma mark - Table view data source
@@ -86,10 +96,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    Media *mediaItem = [DataSource sharedInstance].mediaItems[indexPath.row];
-    if (mediaItem.downloadState == MediaDownloadStateNeedsImage) {
-        [[DataSource sharedInstance] downloadImageForMediaItem:mediaItem];
-    }
+    //A38 - no longer needed?
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -144,18 +151,13 @@
     }
 }
 
-- (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
-    if (item.image) {
-        return 350;
-    } else {
-        return 150;
-    }
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 350;
 }
 
 #pragma mark - MediaTableViewCellDelegate
 
-- (void) cell:(MediaTableViewCell *)cell didTapImageView:(UIImageView *)imageView {
+- (void)cell:(MediaTableViewCell *)cell didTapImageView:(UIImageView *)imageView {
     MediaFullScreenViewController *fullScreenVC = [[MediaFullScreenViewController alloc] initWithMedia:cell.mediaItem];
     
     [self presentViewController:fullScreenVC animated:YES completion:nil];
