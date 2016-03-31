@@ -31,6 +31,8 @@
 		646CE3531C4755A300AB4479 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 646CE3491C4755A300AB4479 /* 10.jpg */; };
 		646CE3561C47562200AB4479 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 646CE3551C47562200AB4479 /* ImagesTableViewController.m */; };
 		64709D0A1C4F3D100031179D /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64709D091C4F3D100031179D /* MediaTableViewCell.m */; };
+		64C1948C1CAB348B00376AA9 /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1948B1CAB348B00376AA9 /* CircleSpinnerView.m */; };
+		64C1948F1CABADB300376AA9 /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1948E1CABADB300376AA9 /* LikeButton.m */; };
 		64E0D3041C76D7F800009486 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E0D3031C76D7F800009486 /* MediaFullScreenViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,10 @@
 		646CE3551C47562200AB4479 /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
 		64709D081C4F3D100031179D /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
 		64709D091C4F3D100031179D /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
+		64C1948A1CAB348B00376AA9 /* CircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSpinnerView.h; sourceTree = "<group>"; };
+		64C1948B1CAB348B00376AA9 /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleSpinnerView.m; sourceTree = "<group>"; };
+		64C1948D1CABADB300376AA9 /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
+		64C1948E1CABADB300376AA9 /* LikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeButton.m; sourceTree = "<group>"; };
 		64E0D3021C76D7F800009486 /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaFullScreenViewController.h; sourceTree = "<group>"; };
 		64E0D3031C76D7F800009486 /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		96F13FDEF1B0F885F7421BF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +133,10 @@
 			children = (
 				64709D081C4F3D100031179D /* MediaTableViewCell.h */,
 				64709D091C4F3D100031179D /* MediaTableViewCell.m */,
+				64C1948A1CAB348B00376AA9 /* CircleSpinnerView.h */,
+				64C1948B1CAB348B00376AA9 /* CircleSpinnerView.m */,
+				64C1948D1CABADB300376AA9 /* LikeButton.h */,
+				64C1948E1CABADB300376AA9 /* LikeButton.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -452,12 +462,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				64E0D3041C76D7F800009486 /* MediaFullScreenViewController.m in Sources */,
+				64C1948C1CAB348B00376AA9 /* CircleSpinnerView.m in Sources */,
 				640E6AA81C48980600BA03EA /* User.m in Sources */,
 				640E6AAE1C48A8CB00BA03EA /* Comment.m in Sources */,
 				64709D0A1C4F3D100031179D /* MediaTableViewCell.m in Sources */,
 				640E6AAB1C48997400BA03EA /* Media.m in Sources */,
 				646CE3101C4754BC00AB4479 /* AppDelegate.m in Sources */,
 				07ACD1CB1C5DE571001D4355 /* LoginViewController.m in Sources */,
+				64C1948F1CABADB300376AA9 /* LikeButton.m in Sources */,
 				640E6AB11C48AA4600BA03EA /* DataSource.m in Sources */,
 				646CE30D1C4754BC00AB4479 /* main.m in Sources */,
 				646CE3561C47562200AB4479 /* ImagesTableViewController.m in Sources */,
