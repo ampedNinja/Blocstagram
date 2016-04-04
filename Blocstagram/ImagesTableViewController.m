@@ -187,13 +187,8 @@
         }
     }];
     
-//A39
-//    [[DataSource sharedInstance] getNumOfLikesForMediaItem:item withCompletionHandler:^{
-//        if (cell.mediaItem == item) {
-//            cell.mediaItem = item;
-//        }
-//    }];
-//    
+    [[DataSource sharedInstance] getLikesForMediaItem:item];
+    
     cell.mediaItem = item;
 }
 

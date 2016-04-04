@@ -284,6 +284,19 @@
     }
 }
 
+//A39
+- (void)getLikesForMediaItem:(Media *)mediaItem {
+    NSString *urlString = [NSString stringWithFormat:@"media/%@/likes", mediaItem.idNumber];
+    [self.instagramOperationManager GET:urlString
+                             parameters:nil
+                                success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                    NSArray *listOfLikers = responseObject;
+                                    mediaItem.numberOfLikes = listOfLikers.count;
+                                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                    NSLog(@"Error getting number of likes: %@", error);
+                                }];
+}
+
 - (NSString *)pathForFileName:(NSString *)filename {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths firstObject];

@@ -49,7 +49,7 @@
         BOOL userHasLiked = [mediaDictionary[@"user_has_liked"] boolValue];
         self.likeState = userHasLiked ? LikeStateLiked : LikeStateNotLiked;
         
-        self.numberOfLikes = [mediaDictionary[@"likes"][@"count"] integerValue];
+        self.numberOfLikes = [mediaDictionary[@"likes"][@"count"] unsignedIntegerValue];
     }
 
     return self;

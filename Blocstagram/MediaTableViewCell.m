@@ -77,7 +77,7 @@ static NSParagraphStyle *paragraphStyle;
         self.numberOfLikesLabel = [[UILabel alloc] init];
         self.numberOfLikesLabel.numberOfLines = 1;
         self.numberOfLikesLabel.backgroundColor = usernameLabelGray;
-        self.numberOfLikesLabel.text = [NSString stringWithFormat:@"%d", self.mediaItem.numberOfLikes];
+        self.numberOfLikesLabel.text = [NSString stringWithFormat:@"%lu", self.mediaItem.numberOfLikes];
         
         for (UIView *view in @[self.mediaImageView, self.usernameAndCaptionLabel, self.commentLabel, self.numberOfLikesLabel, self.likeButton]) {
             [self.contentView addSubview:view];
