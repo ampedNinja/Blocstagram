@@ -287,13 +287,17 @@
 //A39
 - (void)getLikesForMediaItem:(Media *)mediaItem {
     NSString *urlString = [NSString stringWithFormat:@"media/%@/likes", mediaItem.idNumber];
+    NSDictionary *parameters = @{@"access_token": self.accessToken};
+
     [self.instagramOperationManager GET:urlString
-                             parameters:nil
+                             parameters:parameters
                                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                    NSArray *listOfLikers = responseObject;
-                                    mediaItem.numberOfLikes = listOfLikers.count;
+                                    if ([responseObject isKindOfClass:[NSArray class]]) {
+                                        NSArray *listOfLikers = responseObject;
+                                        mediaItem.numberOfLikes = listOfLikers.count;
+                                    }
                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                    NSLog(@"Error getting number of likes: %@", error);
+                                   NSLog(@"Error getting number of likes: %@", error);
                                 }];
 }
 

@@ -222,6 +222,7 @@ static NSParagraphStyle *paragraphStyle;
     self.usernameAndCaptionLabel.attributedText = [self usernameAndCaptionString];
     self.commentLabel.attributedText = [self commentString];
     self.likeButton.likeButtonState = mediaItem.likeState;
+    self.numberOfLikesLabel.text = [NSString stringWithFormat:@"%lu", self.mediaItem.numberOfLikes];
 }
 
 + (CGFloat)heightForMediaItem:(Media *)mediaItem width:(CGFloat)width {
