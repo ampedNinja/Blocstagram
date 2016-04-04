@@ -214,17 +214,32 @@
             NSData *mediaItemData = [NSKeyedArchiver archivedDataWithRootObject:mediaItemsToSave];
             
             NSError *dataError;
-            BOOL wroteSucessfully = [mediaItemData writeToFile:fullPath
+            BOOL wroteSuccessfully = [mediaItemData writeToFile:fullPath
                                                        options:NSDataWritingAtomic | NSDataWritingFileProtectionCompleteUnlessOpen
                                                          error:&dataError];
             
-            if (!wroteSucessfully) {
+            if (!wroteSuccessfully) {
                 NSLog(@"Couldn't write file: %@", dataError);
             }
         });
     }
 }
 
+//A39
+//- (void)saveLikeState:(Media *)mediaItem {
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSError *dataError;
+//        NSString *fullPath = [self pathForFileName:NSStringFromSelector(@selector([mediaItem]))];
+//        NSData *mediaItemData = [NSKeyedArchiver archivedDataWithRootObject:mediaItem];
+//        BOOL wroteSuccessfully = [mediaItemData writeToFile:fullPath
+//                                                    options:NSDataWritingAtomic | NSDataWritingFileProtectionCompleteUnlessOpen
+//                                                      error:&dataError];
+//        
+//        if (!wroteSuccessfully) {
+//            NSLog(@"Coudln't write file: %@", dataError);
+//        }
+//    });
+//}
 
 - (void)downloadImageForMediaItem:(Media *)mediaItem {
     if (mediaItem.mediaURL && !mediaItem.image) {

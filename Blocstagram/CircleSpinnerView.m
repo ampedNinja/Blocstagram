@@ -119,7 +119,7 @@
     if (self) {
         self.strokeThickness = 1;
         self.radius = 12;
-        self.strokeColor = [UIColor purpleColor];
+        self.strokeColor = [UIColor magentaColor];
     }
     return self;
 }
