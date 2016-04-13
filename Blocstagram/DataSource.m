@@ -226,20 +226,20 @@
 }
 
 //A39
-//- (void)saveLikeState:(Media *)mediaItem {
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        NSError *dataError;
-//        NSString *fullPath = [self pathForFileName:NSStringFromSelector(@selector([mediaItem]))];
-//        NSData *mediaItemData = [NSKeyedArchiver archivedDataWithRootObject:mediaItem];
-//        BOOL wroteSuccessfully = [mediaItemData writeToFile:fullPath
-//                                                    options:NSDataWritingAtomic | NSDataWritingFileProtectionCompleteUnlessOpen
-//                                                      error:&dataError];
-//        
-//        if (!wroteSuccessfully) {
-//            NSLog(@"Coudln't write file: %@", dataError);
-//        }
-//    });
-//}
+- (void)saveLikeState:(Media *)mediaItem {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *fullPath = [self pathForFileName:NSStringFromSelector(@selector(likeState))];
+        NSError *dataError;
+        NSData *mediaItemData = [NSKeyedArchiver archivedDataWithRootObject:mediaItem];
+        BOOL wroteSuccessfully = [mediaItemData writeToFile:fullPath
+                                                    options:NSDataWritingAtomic | NSDataWritingFileProtectionCompleteUnlessOpen
+                                                      error:&dataError];
+        
+        if (!wroteSuccessfully) {
+            NSLog(@"Coudln't write file: %@", dataError);
+        }
+    });
+}
 
 - (void)downloadImageForMediaItem:(Media *)mediaItem {
     if (mediaItem.mediaURL && !mediaItem.image) {
@@ -295,6 +295,7 @@
                                     if ([responseObject isKindOfClass:[NSArray class]]) {
                                         NSArray *listOfLikers = responseObject;
                                         mediaItem.numberOfLikes = listOfLikers.count;
+                                        NSLog(@"number of likes is %lu", mediaItem.numberOfLikes);
                                     }
                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                    NSLog(@"Error getting number of likes: %@", error);
@@ -367,6 +368,7 @@
         
         [self.instagramOperationManager POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             mediaItem.likeState = LikeStateLiked;
+            [self saveLikeState:mediaItem];
             
             if (completionHandler) {
                 completionHandler();
