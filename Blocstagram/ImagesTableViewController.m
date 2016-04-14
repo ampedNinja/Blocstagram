@@ -190,8 +190,6 @@
     [[DataSource sharedInstance] getLikesForMediaItem:item];
     
     cell.mediaItem = item;
-    
-    [cell layoutSubviews];
 }
 
 

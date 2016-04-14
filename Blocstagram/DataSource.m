@@ -225,7 +225,6 @@
     }
 }
 
-//A39
 - (void)saveLikeState:(Media *)mediaItem {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *fullPath = [self pathForFileName:NSStringFromSelector(@selector(likeState))];
@@ -284,7 +283,6 @@
     }
 }
 
-//A39
 - (void)getLikesForMediaItem:(Media *)mediaItem {
     NSString *urlString = [NSString stringWithFormat:@"media/%@/likes", mediaItem.idNumber];
     NSDictionary *parameters = @{@"access_token": self.accessToken};
@@ -295,11 +293,11 @@
                                     if ([responseObject isKindOfClass:[NSArray class]]) {
                                         NSArray *listOfLikers = responseObject;
                                         mediaItem.numberOfLikes = listOfLikers.count;
-                                        NSLog(@"number of likes is %lu", mediaItem.numberOfLikes);
                                     }
                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                    NSLog(@"Error getting number of likes: %@", error);
                                 }];
+    
 }
 
 - (NSString *)pathForFileName:(NSString *)filename {
@@ -387,7 +385,7 @@
         
         [self.instagramOperationManager DELETE:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             mediaItem.likeState = LikeStateNotLiked;
-            
+
             if (completionHandler) {
                 completionHandler();
             }

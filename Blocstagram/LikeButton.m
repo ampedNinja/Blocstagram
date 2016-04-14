@@ -62,6 +62,7 @@
         case LikeStateUnliking:
             self.spinnerView.hidden = NO;
             self.userInteractionEnabled = NO;
+            
             break;
             
         case LikeStateLiked:
