@@ -31,6 +31,7 @@
 		646CE3531C4755A300AB4479 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 646CE3491C4755A300AB4479 /* 10.jpg */; };
 		646CE3561C47562200AB4479 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 646CE3551C47562200AB4479 /* ImagesTableViewController.m */; };
 		64709D0A1C4F3D100031179D /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 64709D091C4F3D100031179D /* MediaTableViewCell.m */; };
+		648031E01CC6969D0068E8BE /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 648031DF1CC6969D0068E8BE /* ComposeCommentView.m */; };
 		64C1948C1CAB348B00376AA9 /* CircleSpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1948B1CAB348B00376AA9 /* CircleSpinnerView.m */; };
 		64C1948F1CABADB300376AA9 /* LikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64C1948E1CABADB300376AA9 /* LikeButton.m */; };
 		64E0D3041C76D7F800009486 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64E0D3031C76D7F800009486 /* MediaFullScreenViewController.m */; };
@@ -93,6 +94,8 @@
 		646CE3551C47562200AB4479 /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
 		64709D081C4F3D100031179D /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTableViewCell.h; sourceTree = "<group>"; };
 		64709D091C4F3D100031179D /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTableViewCell.m; sourceTree = "<group>"; };
+		648031DE1CC6969D0068E8BE /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
+		648031DF1CC6969D0068E8BE /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
 		64C1948A1CAB348B00376AA9 /* CircleSpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleSpinnerView.h; sourceTree = "<group>"; };
 		64C1948B1CAB348B00376AA9 /* CircleSpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleSpinnerView.m; sourceTree = "<group>"; };
 		64C1948D1CABADB300376AA9 /* LikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeButton.h; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 		645B0EC81C4F4C800015BD53 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				648031DE1CC6969D0068E8BE /* ComposeCommentView.h */,
+				648031DF1CC6969D0068E8BE /* ComposeCommentView.m */,
 				64709D081C4F3D100031179D /* MediaTableViewCell.h */,
 				64709D091C4F3D100031179D /* MediaTableViewCell.m */,
 				64C1948A1CAB348B00376AA9 /* CircleSpinnerView.h */,
@@ -471,6 +476,7 @@
 				07ACD1CB1C5DE571001D4355 /* LoginViewController.m in Sources */,
 				64C1948F1CABADB300376AA9 /* LikeButton.m in Sources */,
 				640E6AB11C48AA4600BA03EA /* DataSource.m in Sources */,
+				648031E01CC6969D0068E8BE /* ComposeCommentView.m in Sources */,
 				646CE30D1C4754BC00AB4479 /* main.m in Sources */,
 				646CE3561C47562200AB4479 /* ImagesTableViewController.m in Sources */,
 			);
