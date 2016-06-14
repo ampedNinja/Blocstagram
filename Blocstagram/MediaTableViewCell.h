@@ -23,7 +23,10 @@
 
 @property (nonatomic, strong) Media *mediaItem;
 @property (nonatomic, weak) id <MediaTableViewCellDelegate> delegate;
+@property (nonatomic, strong, readonly) ComposeCommentView *commentView;
 
 + (CGFloat)heightForMediaItem:(Media *)mediaItem width:(CGFloat)width;
+
+- (void)stopComposingComment;
 
 @end
