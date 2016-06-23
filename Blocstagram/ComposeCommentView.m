@@ -97,9 +97,15 @@
     _isWritingComment = isWritingComment;
     
     if (animated) {
-        [UIView animateWithDuration:0.2 animations:^{
-            [self layoutSubviews];
-        }];
+        [UIView animateWithDuration:0.5
+                              delay:0.1
+             usingSpringWithDamping:0.7
+              initialSpringVelocity:1.0
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             [self layoutSubviews];}
+                         completion:^(BOOL finished) {
+                                }];
     } else {
         [self layoutSubviews];
     }
@@ -124,6 +130,8 @@
         [self setIsWritingComment:YES animated:YES];
         [self.textView becomeFirstResponder];
     }
+    
+    
 }
 
 #pragma mark - UITextViewDelegate
